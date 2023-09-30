@@ -1,0 +1,78 @@
+.client-list {
+    width: 80%;
+    overflow: auto;
+    margin: 0 auto;
+    border: 5px solid #ccc;
+    border-radius: 5px;
+    margin-top: 50px;
+  }
+  .main-header{
+        color: #f390e5;
+        font-weight: bold;
+        margin-top: 20px;
+       text-align: center;
+       font-size: x-large;
+       border-bottom: 5px solid #ccc;
+       padding-bottom: 10px;
+  }
+
+  .cl-details{
+    color:aqua;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 50px;
+    font-size: large;
+    margin-bottom: 10px;
+  }
+
+  .addClient{
+    background-color: #28a745;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    /* margin-left: 500px; */
+    position: absolute; /* Position the button relative to the container */
+    top: 19%; /* Align the top of the button to the middle of the container */
+    right: 200px; /* Align the button to the right edge of the container */
+    transform: translateY(-50%); /* Center the button vertically */
+}
+.addClient:hover {
+    background-color:#066606;
+  }
+  
+  .header {
+    display: flex;
+    background-color: #f0f0f0;
+    font-weight: bold;
+    padding: 10px;
+  }
+  
+  .header-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .client-items {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .client-item {
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .client-data {
+    flex: 1;
+    text-align: center;
+  }
+ .del{
+    background-color: #dc1309;
+    color: #fff;
+    padding: 3px 6px;
+    border: none;
+    cursor: pointer;
+ }
+  

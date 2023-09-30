@@ -1,0 +1,115 @@
+/* login.component.css */
+
+/* Styles for the login container */
+.login-container {
+    
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Style for the login form */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Style for form inputs */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  /* Style the button container */
+.button-container {
+    display: flex; /* Use flexbox to arrange buttons horizontally */
+    gap: 15px; /* Add spacing between buttons */
+    justify-content: center; /* Center buttons horizontally within the container */
+  }
+  
+  /* Style the login button */
+  .Lsubmit {
+    background-color: #007bff; /* Set the background color */
+    color: #fff; /* Set the text color */
+    padding: 10px 20px; /* Add padding to the button */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add a pointer cursor on hover */
+  }
+  
+  /* Style the registration button */
+  .Rsubmit {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .Rsubmit:hover {
+    background-color:#066606;
+  }
+  .Lsubmit:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for the login button */
+  /* button[type="submit"] {
+    padding: 10px 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+     
+  }*/
+  /* .Lsubmit {
+    padding: 10px 30px;
+    background-color:#0056b3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  } */
+  
+  
+  /* button[type="submit"]:hover {
+    background-color: #0056b3;
+  } */
+  
+  
+  /* Style for user details */
+  h3 {
+    margin-top: 20px;
+    
+  }
+
+  
+  /* Style for error message */
+  .error-message {
+    color: #ff0000;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  .success-message{
+    color:aquamarine;
+    font-weight: bold;
+    margin: top 10px;
+  }
+  

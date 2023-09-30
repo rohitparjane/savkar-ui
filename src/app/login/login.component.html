@@ -1,0 +1,36 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form (submit)="login(userName.value, password.value)">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" placeholder="Username"  #userName required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Password" #password>
+      </div>
+      <div class="button-container">
+        <button class="Lsubmit">Login</button>
+        <button (click)= "navigateToRegister()" class="Rsubmit">Register</button>
+      </div>
+    </form>
+  
+  <div class="error-message" *ngIf="authentication===false">Authentication failed. Please check your credentials.</div>
+  <div class="success-message" *ngIf="authentication===true">Logged in Successfully</div>
+  <div *ngIf="authentication && userDetails">
+    <h3>User Details:</h3>
+    <p>Username: {{ userDetails.userName }}</p>
+    <p>Email: {{ userDetails.emailId }}</p>
+    <p>Mobile Number: {{ userDetails.mobileNumber }}</p>
+    <button (click)="navigateToNewPage()">Continue</button>
+
+  </div>
+  
+  <!-- <form (submit)="login(username.value, password.value)">
+    <input type="text" placeholder="Username" #username>
+    <input type="password" placeholder="Password" #password>
+    <button type="submit">Login</button>
+  </form> -->
+ 
+
+  
