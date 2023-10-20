@@ -1,0 +1,16 @@
+.lout{
+   
+    background-color: #e23030;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    /* margin-left: 500px; */
+    position: absolute; /* Position the button relative to the container */
+    top: 80px; /* Align the top of the button to the middle of the container */
+    right: 200px; /* Align the button to the right edge of the container */
+    transform: translateY(-50%); /* Center the button vertically */
+}
+.lout:hover {
+    background-color:#c36519;
+  }

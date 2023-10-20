@@ -9,9 +9,12 @@
         <label for="password">Password:</label>
         <input type="password" placeholder="Password" #password>
       </div>
-      <div class="button-container">
+      <div class="button-container" *ngIf="authentication!==true">
         <button class="Lsubmit">Login</button>
-        <button (click)= "navigateToRegister()" class="Rsubmit">Register</button>
+        <!-- <button (click)= "navigateToRegister()" class="Rsubmit">Register</button> -->
+      </div>
+      <div class="reg-link" *ngIf="authentication!==true">
+        <span> New User ? <a href="/register">Register</a></span>
       </div>
     </form>
   
@@ -22,8 +25,7 @@
     <p>Username: {{ userDetails.userName }}</p>
     <p>Email: {{ userDetails.emailId }}</p>
     <p>Mobile Number: {{ userDetails.mobileNumber }}</p>
-    <button (click)="navigateToNewPage()">Continue</button>
-
+    <button (click)="navigateToNewPage()" class="Lsubmit">Continue</button>    
   </div>
   
   <!-- <form (submit)="login(username.value, password.value)">

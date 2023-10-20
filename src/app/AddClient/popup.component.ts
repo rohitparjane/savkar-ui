@@ -26,8 +26,8 @@ export class PopupComponent {
   }
    
   
-  addClient(clName:String,mobileNumber:String,clAmount:String){
-    this.authService.addClient(clName,clAmount,mobileNumber,this.userName).subscribe(
+  addClient(clName:String,mobileNumber:String,clAddress:String){
+    this.authService.addClient(clName,clAddress,mobileNumber,this.userName).subscribe(
       response=>{
         if(response=='Client Added Successfully'){
            console.log("Success")
@@ -35,6 +35,9 @@ export class PopupComponent {
         }
       },
         error=>{
+          if (error.status === 403) {
+            this.dialogRef.close({ success: false }); // Redirect to the login page on a 403 error
+          }
             console.error("Failed",error)
             this.check="Error"
         }

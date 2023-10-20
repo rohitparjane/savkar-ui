@@ -1,5 +1,12 @@
 <div class="Del-POP">
-    <h2>Delete Client !!</h2>
+    <div *ngIf ="message">
+    <h2>{{message}}<br>
+        Delete Client !!</h2>
+    </div>
+    <div *ngIf="message === undefined">
+        <h2>
+            Delete Client !!</h2>
+        </div>
     <div class="button-container">
         <button (click)= "delete()" class="del">DELETE</button>
         <button (click)= "cancel()" class="cancel">CANCEL</button>

@@ -40,9 +40,12 @@ export class LoginComponent {
 
   login(userName: string, password: string): void {
     this.authService.login(userName, password).subscribe(
-      response => {
-        if(response==true){
-          console.log('Authentication successful');
+      Response => {
+        // Save the token in localStorage
+
+         localStorage.setItem('token', Response.jwt);
+        console.log(Response.jwt);
+        console.log('Authentication successful');
           this.authentication =true;
 
           this.authService.getUser(userName).subscribe(
@@ -50,13 +53,26 @@ export class LoginComponent {
               console.log('User Fetched');
               this.userDetails = userDetails;
               this.userName=userName;
-            }
+            },
+            (error) => {
+              console.error('Error:', error);}
           )
+        // if(response==true){
+        //   console.log('Authentication successful');
+        //   this.authentication =true;
 
-        }else{
-          console.error('Authentication failed');
-          this.authentication=false;
-        }
+        //   this.authService.getUser(userName).subscribe(
+        //     userDetails=>{
+        //       console.log('User Fetched');
+        //       this.userDetails = userDetails;
+        //       this.userName=userName;
+        //     }
+        //   )
+
+        // }else{
+        //   console.error('Authentication failed');
+        //   this.authentication=false;
+        // }
        
         // Redirect the user to the home page or perform any other actions
       },
@@ -75,8 +91,8 @@ export class LoginComponent {
     queryParams:{userName :this.userName}
   });
   }
-  navigateToRegister():void{
-    this.router.navigate(['/register'])
-  }
+  // navigateToRegister():void{
+  //   this.router.navigate(['/register'])
+  // }
 }
 

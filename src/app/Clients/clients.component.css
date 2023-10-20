@@ -19,7 +19,7 @@
   .cl-details{
     color:aqua;
     font-weight: bold;
-    margin-top: 20px;
+    margin-top: 25px;
     margin-left: 50px;
     font-size: large;
     margin-bottom: 10px;
@@ -33,7 +33,7 @@
     cursor: pointer;
     /* margin-left: 500px; */
     position: absolute; /* Position the button relative to the container */
-    top: 19%; /* Align the top of the button to the middle of the container */
+    top: 140px; /* Align the top of the button to the middle of the container */
     right: 200px; /* Align the button to the right edge of the container */
     transform: translateY(-50%); /* Center the button vertically */
 }

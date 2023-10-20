@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-del-pop',
@@ -7,8 +7,19 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./del-pop.component.css']
 })
 export class DelPopComponent {
-  constructor(private dialogRef: MatDialogRef<DelPopComponent>){}
+  message!:String;
 
+  constructor(private dialogRef: MatDialogRef<DelPopComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any 
+    ){}
+
+   
+     ngOnInit(){
+      if(this.data&&this.data.clAmount !=='0'){
+          this.message='Client is not Settled, want to '
+      }
+     }
+      
    delete(){
     this.dialogRef.close({ success: true });
    }

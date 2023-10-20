@@ -1,0 +1,124 @@
+.payment-container {
+    width: 550px; /* Set your desired width */
+    height: 600px; /* Set your desired height */
+    padding: 20px;
+    background-color: #f5f5f5;
+    overflow: auto;
+    position: relative;
+   
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  .header-item {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .client-items {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    height: 250px;
+    overflow: auto;
+  }
+  
+  .client-item {
+    
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    
+  }
+  
+  .client-data {
+    flex: 1;
+    text-align: center;
+  }
+  .user-details {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Styles for user data items */
+  .user-data {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+  
+  /* Add more styles as needed */
+
+  .add-item {
+    display: flex; /* Display elements in a row */
+    justify-content: space-between; /* Align elements at the ends of the container */
+    align-items: center; /* Vertically center the elements */
+    margin-top: 10px; /* Add a bit of space at the top */
+    padding: 10px;
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Round the corners */
+    background-color: #f0f0f0; /* Background color */
+    width: 75%;
+    margin-bottom: 5pxs;
+    gap: 4px;
+  }
+  
+  .add-item input {
+    flex: 1; /* Allow the input to take available space */
+    padding: 5px; /* Add padding to the input field */
+    border: 1px solid #ccc; /* Add a border to the input */
+    border-radius: 3px; /* Round the input corners */
+    margin-right: 10px; /* Add space between input and button */
+  }
+  
+  .gave-button {
+    padding: 5px 10px; /* Add padding to the button */
+    border: none; /* Remove button border */
+    border-radius: 3px; /* Round the button corners */
+    background-color: #e43f3fc0; /* Button background color */
+    color: #fff; /* Button text color */
+    cursor: pointer; /* Show a pointer cursor on hover */
+  }
+  .got-button {
+    padding: 5px 10px; /* Add padding to the button */
+    border: none; /* Remove button border */
+    border-radius: 3px; /* Round the button corners */
+    background-color: #007bffc9; /* Button background color */
+    color: #fff; /* Button text color */
+    cursor: pointer; /* Show a pointer cursor on hover */
+  }
+  .gave-button:hover {
+    background-color:#de1d1d;
+  }
+  .got-button:hover {
+    background-color:#007bff;
+  }
+ 
+  .button-container {
+   
+    position: absolute; /* Position the button absolutely within the container */
+    bottom: 10px; /* Adjust the distance from the bottom as needed */
+    left: 50%; /* Move the button to the center horizontally */
+    transform: translateX(-50%); /* Center the button horizontally */
+  }
+
+  .close {
+    padding: 5px 10px; /* Add padding to the button */
+    border: none; /* Remove button border */
+    border-radius: 3px; /* Round the button corners */
+    background-color: #4bb815; /* Button background color */
+    color: #fff; /* Button text color */
+    cursor: pointer; /* Show a pointer cursor on hover */
+    
+  }
+  
+  
+  

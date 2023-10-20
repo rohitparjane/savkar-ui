@@ -1,0 +1,32 @@
+<div class="payment-container">
+    <h2> Payment Details</h2>
+    <div class="user-details">
+        <div class="user-data">Name: {{ clName }}</div>
+        <div class="user-data">Mobile Number: {{ clMobile }}</div>
+        <div class="user-data">Amount: {{ clAmount}}</div>
+    </div>
+    <div class="add-item">
+        <input type="text" placeholder="Amount" [(ngModel)]="amount">
+        <button (click)="insertEntry('gave')" class="gave-button">You Gave</button>
+        <button (click)="insertEntry('got')" class="got-button">You Got</button>
+    </div>
+
+    <div class="header">
+        <div class="header-item">Amount</div>
+        <div class="header-item">Interest</div>
+        <div class="header-item">Date</div>
+    </div>
+
+    <div class="client-items">
+        <div class="client-item" *ngFor="let record of records "(mouseenter)="record.isHovered = true" (mouseleave)="record.isHovered = false"
+                                    (click)="deleteEntry(record.srNo,record.hiAmount)">
+            <div class="client-data">{{ record.hiAmount}}</div>         
+            <div class="client-data">{{ record.hiInterest }}</div>
+            <div class="client-data">{{ record.hiDate}}</div>
+        </div>
+
+        <div class="button-container">
+            <button (click)= "close()" class="close">CLOSE</button>
+           
+          </div>
+</div>

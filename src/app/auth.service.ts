@@ -32,14 +32,30 @@ export class AuthService {
     return this.http.get(url);
   }
 
-  addClient(clName:String,clAmount:String,clMobile:String,user:String):Observable<any>{
-    const client ={clName,clAmount,clMobile,user};
+  addClient(clName:String,clAddress:String,clMobile:String,user:String):Observable<any>{
+    const client ={clName,clAddress,clMobile,user};
     const url = `${this.apiUrl}/client`
     return this.http.post(url,client,{ responseType:'text'})
   }
 
   deleteClient(clName: string, user: string): Observable<any> {
     const url = `${this.apiUrl}/deleteClient?clName=${clName}&user=${user}`;
+    return this.http.delete(url);
+  }
+
+  getHistory(clName: string) : Observable<any>{
+    const url = `${this.apiUrl}/history?client=${clName}`;
+    return this.http.get(url);
+  }
+
+  insertEntry(clUser:String,hiAmount:number) :Observable<any>{
+    const history={clUser,hiAmount}
+    const url = `${this.apiUrl}/insertEntry`;
+    return this.http.post(url,history);
+  }
+
+  deleteEntry(srNo: number, clName: string,amount: number): Observable<any> {
+    const url = `${this.apiUrl}/deleteEntry?srNo=${srNo}&clName=${clName}&amount=${amount}`;
     return this.http.delete(url);
   }
   

@@ -1,28 +1,41 @@
 
 <div class="client-list">
-    <div class="main-header"> Hi User Welcome to Savkar Portal</div>
+    <div class="main-header"> Hi {{ userName }} Welcome to Loan management
+        <app-header></app-header>
+    </div>
+    
     <div class="cl-details"> Client Details
         <button (click)= "insertClient()" class="addClient">Add Client</button>
     </div>
     <div class="header">
       <div class="header-item">Name</div>
       <div class="header-item">Mobile</div>
+      <div class="header-item">Address</div>
       <div class="header-item">Amount</div>
       <!-- <div class="header-item">Date</div>
       <div class="header-item">Due Date</div> -->
     </div>
     <div class="client-items">
-      <div class="client-item" *ngFor="let client of clients"(mouseenter)="client.isHovered = true" (mouseleave)="client.isHovered = false">
+      <div class="client-item" *ngFor="let client of clients"(mouseenter)="client.isHovered = true" (mouseleave)="client.isHovered = false" 
+                                               (click)="showClientDetails(client.clName,client.clMobile,client.clAmount)">
         <div class="client-data">{{ client.clName }}</div>
         <div class="client-data">{{ client.clMobile }}</div>
+        <div class="client-data">{{ client.clAddress }}</div>
         <div class="client-data">{{ client.clAmount }}</div>
         <!-- <div class="client-data">{{ client.date }}</div>
         <div class="client-data">{{ client.user }}</div> -->
+            
         <div *ngIf="client.isHovered" class="row-buttons">
             <!-- <button (click)="editClient(client)">Edit</button> -->
-            <button (click)="deleteClient(client)" class="del">Delete</button>
-          </div>
-      </div>
+            <button (click)="deleteClient(client.clName,client.clAmount,($event))" class="del">Delete</button>
+        </div>
+      
+        <!-- <div *ngIf="client.showDetails" class="clDetails">
+          <h2>Hi there</h2>
+          <h2>Hi how therea</h2>
+          
+        </div> -->
+    </div>
     </div>
   </div>
   <p>Hi in clients page</p>

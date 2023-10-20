@@ -5,6 +5,8 @@ export interface Client {
 	  date: Date;
 	  user: String;
       isHovered:boolean;
+      showDetails: boolean; 
+      clAddress:String;
     // Add more properties as needed
   }
   

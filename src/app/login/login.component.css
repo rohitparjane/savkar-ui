@@ -45,25 +45,27 @@
   
   /* Style the login button */
   .Lsubmit {
+    width:40%;
     background-color: #007bff; /* Set the background color */
     color: #fff; /* Set the text color */
     padding: 10px 20px; /* Add padding to the button */
     border: none; /* Remove border */
     cursor: pointer; /* Add a pointer cursor on hover */
+   
   }
   
   /* Style the registration button */
-  .Rsubmit {
+  /* .Rsubmit {
     background-color: #28a745;
     color: #fff;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
-  }
+  } */
 
-  .Rsubmit:hover {
+  /* .Rsubmit:hover {
     background-color:#066606;
-  }
+  } */
   .Lsubmit:hover {
     background-color: #0056b3;
   }
@@ -112,4 +114,20 @@
     font-weight: bold;
     margin: top 10px;
   }
+
+  /* Add this CSS to your component's style file (e.g., styles.css or your component's CSS file) */
+.button {
+    background-color: #007bff; /* Set the background color */
+    color: #fff; /* Set the text color */
+    padding: 10px 20px; /* Add padding to the button */
+    border: none; /* Remove the border */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 5px; /* Add rounded corners */
+    font-size: 16px; /* Set the font size */
+  }
+  
+  .button:hover {
+    background-color: #0056b3; /* Change the background color on hover */
+  }
+  
   

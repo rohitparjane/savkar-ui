@@ -5,6 +5,7 @@ import { Client } from './clients.model';
 import { PopupComponent } from "../AddClient/popup.component";
 import { MatDialog } from "@angular/material/dialog";
 import { DelPopComponent } from "../del-pop/del-pop.component";
+import { PaymentComponent } from "../payment/payment.component";
 
 
 
@@ -17,8 +18,9 @@ import { DelPopComponent } from "../del-pop/del-pop.component";
     userName!: string;
     clientDetails:any;
     clients: Client[] = [];
+    
 
-    constructor(private route: ActivatedRoute,
+   constructor(private route: ActivatedRoute,
                 private authService: AuthService ,
                 private dialog: MatDialog
                ) {}
@@ -29,13 +31,17 @@ import { DelPopComponent } from "../del-pop/del-pop.component";
              // this.userDetails = JSON.parse(params["userDetails"])
              this.userName= params["userName"];
               console.log(this.userName)
-
-              this.authService.getClients(this.userName).subscribe((data: Client[]) => {
-                this.clients = data;
-                console.log(this.clients);
-            });
+              this.freshClients();
+            
             }
         })
+    }
+
+    freshClients(){
+        this.authService.getClients(this.userName).subscribe((data: Client[]) => {
+            this.clients = data.map(client => ({ ...client, showDetails: false }));
+            console.log(this.clients);
+        });
     }
 
     insertClient(){
@@ -47,22 +53,27 @@ import { DelPopComponent } from "../del-pop/del-pop.component";
             // This code will be executed when the dialog is closed.
             if (result && result.success) {
               // The API call was successful, so you can reload the parent page
-              window.location.reload();
+             // window.location.reload();
+             this.freshClients();
             }
           });
          
     }
-    deleteClient(client:any){
+    deleteClient(client:any,clAmount:String,event:Event){
+        event.stopPropagation();
         console.log("in Delete",client)
         console.log("In Delete",this.userName)
-        const dialogRef=this.dialog.open(DelPopComponent);
+        const dialogRef=this.dialog.open(DelPopComponent,{
+            data:{clAmount}
+        });
         dialogRef.afterClosed().subscribe(result => {
             console.log("inside delete popup")
             // This code will be executed when the dialog is closed.
             if (result && result.success) {
-                this.authService.deleteClient(client.clName,this.userName).subscribe(
+                this.authService.deleteClient(client,this.userName).subscribe(
                 response=>{ console.log("Deleted")
-                 window.location.reload();
+                //window.location.reload();
+                this.freshClients();
             }
                 )
             }else{
@@ -73,6 +84,17 @@ import { DelPopComponent } from "../del-pop/del-pop.component";
           });
         
     }
+
+    showClientDetails(clName: String,clMobile:String,clAmount:String) {
+        // client.showDetails = !client.showDetails;
+        const dialogRef=this.dialog.open(PaymentComponent, {
+            data:{clName,clMobile,clAmount} // Pass the client data here
+          });
+          dialogRef.afterClosed().subscribe(response=>{
+            this.freshClients();}
+          );
+      }
+      
 
     
 }

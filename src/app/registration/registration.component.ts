@@ -19,7 +19,7 @@ export class RegistrationComponent {
         if (response === 'User Id Already Present') {
           console.log('Response:', response);
           this.response=response;
-         this.openSuccessPopup(response);
+        // this.openSuccessPopup(response);
         
         }
 
