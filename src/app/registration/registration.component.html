@@ -1,24 +1,46 @@
 <div class="register-container">
     <h2>Register</h2>
-<form (submit)="register(userName.value, password.value,emailId.value,mobileNumber.value)">
+    <form [formGroup]="registrationForm" (ngSubmit)="register()">
     <div class="form-group">
       <label for="userName">User Name:</label>
-      <input type="text" placeholder="Username" #userName>
+      <input type="text" placeholder="Username" formControlName="userName">
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
-      <input type="password" placeholder="Password" #password>
+      <input type="password" placeholder="Password" formControlName="password">
     </div>
     <div class="form-group">
+      <label for="mobileNumber">Mobile Number:</label>
+      <input type="text" placeholder="MobileNumber" formControlName="mobileNumber">
+      <div *ngIf="registrationForm.get('mobileNumber')?.hasError('text') && registrationForm.get('mobileNumber')?.touched">
+        Invalid Mobile No.
+      </div>
+  </div>
+    <div class="form-group">
         <label for="emailId">EmailId:</label>
-        <input type="email" placeholder="EmailId" #emailId>
+        <input type="email" placeholder="EmailId" formControlName="emailId" >
+        <span *ngIf="otpValid" class="blue-tick">✔</span>
+        <div *ngIf="registrationForm.get('emailId')?.hasError('email') && registrationForm.get('emailId')?.touched">
+          Invalid email format. 
+        </div>
+        <div *ngIf="registrationForm.get('emailId')?.valid ">
+          <button type="button" (click)="sendOtp(registrationForm.get('emailId')?.value)" [disabled]="isOtpInputDisabled">send otp</button>
+        </div>
+        <div *ngIf="isOtpInputDisabled">
+          Wait {{ countdown }} seconds
+        </div>
     </div>
+    <div class="validate" *ngIf="otpStatus">
+      <label for="otp">OTP:</label>
+      <input type="text" placeholder="OTP" formControlName="otp">
+      <div *ngIf="invalidOtp">
+        Invalid email format. 
+      </div>
+      <button  type="button" (click)="validateOtp(registrationForm.get('otp')?.value)" class="valid-button">Validate</button>
+  </div>
 
-<div class="form-group">
-    <label for="mobileNumber">Mobile Number:</label>
-    <input type="text" pattern="[0-9]" placeholder="MobileNumber" #mobileNumber>
-</div>
-    <button type="submit">Register</button>
+
+    <button type="submit" [ngClass]="buttonColorClass">Register</button>
   </form>
 
   <div class="login-link">

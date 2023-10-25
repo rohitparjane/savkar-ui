@@ -25,7 +25,7 @@ export class PaymentComponent {
 
    ngOnInit() {
     console.log("hi in payment")
-    if (this.data && this.data.clName&&this.data.clMobile&&this.data.clAmount) {
+    if (this.data && this.data.clName) {
       this.clName = this.data.clName;
       this.clMobile = this.data.clMobile;
       this.clAmount=this.data.clAmount

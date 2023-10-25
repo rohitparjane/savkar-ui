@@ -43,10 +43,7 @@ export class AuthService {
     return this.http.delete(url);
   }
 
-  getHistory(clName: string) : Observable<any>{
-    const url = `${this.apiUrl}/history?client=${clName}`;
-    return this.http.get(url);
-  }
+ 
 
   insertEntry(clUser:String,hiAmount:number) :Observable<any>{
     const history={clUser,hiAmount}
@@ -58,5 +55,19 @@ export class AuthService {
     const url = `${this.apiUrl}/deleteEntry?srNo=${srNo}&clName=${clName}&amount=${amount}`;
     return this.http.delete(url);
   }
+
+  getHistory(clName: string) : Observable<any>{
+    const url = `${this.apiUrl}/history?client=${clName}`;
+    return this.http.get(url);
+  }
   
+  sendOtp(email:String):Observable<any>{
+    const url = `${this.apiUrl}/sendOtp?email=${email}`
+    return this.http.post(url,{ responseType:'json'})
+  }
+
+  validateOtp(email:string,otp:number) : Observable<any>{
+    const url = `${this.apiUrl}/validate?email=${email}&otp=${otp}`;
+    return this.http.get(url);
+  }
 }

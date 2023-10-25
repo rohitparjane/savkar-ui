@@ -38,6 +38,7 @@
   
   /* Style for the login button */
   button[type="submit"] {
+    margin-top: 1%;
     padding: 10px 18px;
     background-color: #007bff;
     color: #fff;
@@ -47,13 +48,19 @@
     
   }
   button[type="button"] {
-    padding: 10px 30px;
-    background-color:brown;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    margin-top: 1%;
+    padding: 5px 10px; /* Add padding to the button */
+    border: none; /* Remove button border */
+    border-radius: 3px; /* Round the button corners */
+    background-color: #e43f3fc0; /* Button background color */
+    color: #fff; /* Button text color */
+    cursor: pointer; /* Show a pointer cursor on hover */
   }
+
+  button[type="button"]:hover {
+    background-color: #9f6611;
+  }
+  
   
   
   button[type="submit"]:hover {

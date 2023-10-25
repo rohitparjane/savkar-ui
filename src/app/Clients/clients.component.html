@@ -12,8 +12,8 @@
       <div class="header-item">Mobile</div>
       <div class="header-item">Address</div>
       <div class="header-item">Amount</div>
-      <!-- <div class="header-item">Date</div>
-      <div class="header-item">Due Date</div> -->
+       <div class="header-item">Date</div>
+      <!--<div class="header-item">Due Date</div> -->
     </div>
     <div class="client-items">
       <div class="client-item" *ngFor="let client of clients"(mouseenter)="client.isHovered = true" (mouseleave)="client.isHovered = false" 
@@ -22,8 +22,8 @@
         <div class="client-data">{{ client.clMobile }}</div>
         <div class="client-data">{{ client.clAddress }}</div>
         <div class="client-data">{{ client.clAmount }}</div>
-        <!-- <div class="client-data">{{ client.date }}</div>
-        <div class="client-data">{{ client.user }}</div> -->
+         <div class="client-data">{{ client.date }}</div>
+      <!--  <div class="client-data">{{ client.user }}</div> -->
             
         <div *ngIf="client.isHovered" class="row-buttons">
             <!-- <button (click)="editClient(client)">Edit</button> -->
@@ -38,5 +38,5 @@
     </div>
     </div>
   </div>
-  <p>Hi in clients page</p>
+ 
   

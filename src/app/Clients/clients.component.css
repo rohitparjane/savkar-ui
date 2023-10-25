@@ -1,13 +1,14 @@
 .client-list {
-    width: 80%;
+    width: 95%;
     overflow: auto;
     margin: 0 auto;
     border: 5px solid #ccc;
     border-radius: 5px;
     margin-top: 50px;
+    
   }
   .main-header{
-        color: #f390e5;
+        color: #500b0b;
         font-weight: bold;
         margin-top: 20px;
        text-align: center;
@@ -17,7 +18,7 @@
   }
 
   .cl-details{
-    color:aqua;
+    color:#333;
     font-weight: bold;
     margin-top: 25px;
     margin-left: 50px;
@@ -26,6 +27,7 @@
   }
 
   .addClient{
+    border-radius: 3px;
     background-color: #28a745;
     color: #fff;
     padding: 8px 16px;
@@ -33,8 +35,8 @@
     cursor: pointer;
     /* margin-left: 500px; */
     position: absolute; /* Position the button relative to the container */
-    top: 140px; /* Align the top of the button to the middle of the container */
-    right: 200px; /* Align the button to the right edge of the container */
+    top: 20%; /* Align the top of the button to the middle of the container */
+    right: 15%; /* Align the button to the right edge of the container */
     transform: translateY(-50%); /* Center the button vertically */
 }
 .addClient:hover {
@@ -56,12 +58,15 @@
   .client-items {
     display: flex;
     flex-direction: column;
+    /* height: 250px; */
+    
   }
   
   .client-item {
     display: flex;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+ 
   }
   
   .client-data {

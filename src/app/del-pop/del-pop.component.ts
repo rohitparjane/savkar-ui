@@ -8,6 +8,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class DelPopComponent {
   message!:String;
+  message1!:String;
 
   constructor(private dialogRef: MatDialogRef<DelPopComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any 
@@ -15,7 +16,11 @@ export class DelPopComponent {
 
    
      ngOnInit(){
-      if(this.data&&this.data.clAmount !=='0'){
+      if(this.data&&this.data.response){
+        this.message1='register'
+      }
+      if(this.data && this.data.clAmount > 0){
+        console.log(this.data.clAmount)
           this.message='Client is not Settled, want to '
       }
      }
